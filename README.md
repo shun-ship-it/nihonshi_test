@@ -1,1 +1,0 @@
-# nihonshi_test
