@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>モンゴル襲来と幕府の衰退・詳しいクイズ</title>
+<title>モンゴル襲来から建武の新政・詳しいクイズ</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f2f4f7;color:#202a35;font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif;line-height:1.7}main{max-width:850px;margin:24px auto;padding:0 14px 45px}.panel,.card{background:white;border:1px solid #dce1e8;border-radius:14px;padding:18px;margin:12px 0}h1{font-size:1.6rem;margin:0 0 8px}.muted{color:#667085}.chip{display:inline-block;background:#f7ecea;color:#84372f;border-radius:20px;padding:3px 10px;margin:8px 5px 0 0;font-size:.85rem}.section{font-size:1.15rem;font-weight:750;margin:25px 3px 6px}.q{font-weight:700;margin:0 0 10px}.num{display:inline-grid;place-items:center;background:#f7ecea;color:#84372f;width:29px;height:29px;border-radius:50%;font-weight:800;margin-right:8px}.answer{width:100%;padding:11px;border:1px solid #c7d0db;border-radius:9px;font:inherit;font-size:1rem}.hint{margin-top:8px}.hint summary{cursor:pointer;color:#84372f}.hint p{color:#667085;margin:4px 0}.feedback{display:none;padding:10px;margin-top:9px;border-radius:8px}.feedback.show{display:block}.correct{background:#eaf5ef;color:#176b45}.incorrect{background:#fff0ef;color:#a83232}button{border:0;border-radius:9px;padding:11px 15px;font:inherit;font-weight:700;cursor:pointer;margin:5px 5px 5px 0}.primary{background:#923b34;color:white}.secondary{background:#e7ebf0;color:#202a35}.result{display:none;background:white;padding:18px;border:1px solid #dce1e8;border-radius:14px;margin:18px 0}.result.show{display:block}.score{font-size:1.6rem;font-weight:850}.summary h2{font-size:1.2rem}.summary h3{font-size:1rem;color:#84372f;margin:15px 0 3px}.summary p{margin:0}.note{font-size:.85rem;color:#667085}.bar{height:8px;background:#e8edf2;border-radius:20px;overflow:hidden;margin:12px 0 18px}.bar div{height:100%;width:0;background:#923b34;transition:width .2s}.qcount{font-size:.85rem;color:#667085;margin-bottom:8px}.questionbox{font-size:1.15rem;font-weight:750;margin:0 0 18px}.answer:disabled{background:#f3f5f7}.navrow{display:flex;gap:8px;flex-wrap:wrap}
 </style><body><main>
-<header class="panel"><h1>モンゴル襲来と幕府の衰退</h1><p class="muted">教科書の写真99〜103ページをもとに、細かい内容まで確認する入力式クイズです。</p><span class="chip">全30問</span><span class="chip">記述式</span><span class="chip">ヒント・自動採点</span></header>
+<header class="panel"><h1>モンゴル襲来から建武の新政まで</h1><p class="muted">教科書のモンゴル襲来から鎌倉幕府の滅亡・建武の新政まで、教科書の内容を確認する入力式クイズです。</p><span class="chip">全70問</span><span class="chip">記述式</span><span class="chip">ヒント・自動採点</span></header>
 <section class="panel"><b>取り組み方</b><p>答えを入力して「答え合わせ」を押そう。できるだけ教科書に出てくる正式な用語で答えてみよう。</p><button class="secondary" onclick="hints(true)">ヒントをすべて開く</button><button class="secondary" onclick="hints(false)">ヒントを閉じる</button></section>
 <section class="panel" id="quizPanel"><div id="progress" class="muted"></div><div id="questionStage"></div><div class="bar"><div id="barFill"></div></div><div id="nav"><button class="secondary" id="prevBtn" type="button">前の問題</button><button class="primary" id="checkBtn" type="button">答え合わせ</button><button class="primary" id="nextBtn" type="button" style="display:none">次の問題へ</button></div><button class="secondary" id="restartBtn" type="button">最初からやり直す</button></section>
 <div id="result" class="result"></div>
@@ -21,6 +21,14 @@
 <h3>⑩ 市と商業・金融</h3><p>荘園・公領の中心、交通の要地、寺社の門前などに定期市が開かれ、月3回の三斎市もあった。京都・奈良・鎌倉には常設の小売店「見世棚」も出現。港では商品の委託販売・仲介・運送を行う問（問丸）が活躍した。</p>
 <h3>⑪ 貨幣・為替・借上</h3><p>米などの現物に代わって銭貨が広く使われ、中国から輸入した銭も利用された。遠隔地との取引では銭貨を運ぶ代わりに為替が使われ、金融業者の借上も多く現れた。宿や港が町として発展し、富裕な人々は有徳人と呼ばれた。</p>
 <h3>⑫ 琉球とアイヌ</h3><p>琉球では按司（あじ）がグスクを拠点に勢力を広げ、やがて北山・中山・南山の3勢力にまとまった。北海道では擦文文化やオホーツク文化を経て13世紀にアイヌ文化が生まれ、アイヌの人々は津軽の十三湊を拠点とする安東氏と交易した。</p>
+
+<h3>⑬ 商業・交通の発達</h3><p>遠隔地を結ぶ商業取引が盛んになり、陸上交通の要地には宿が設けられた。港では、商品の委託販売・仲介・運送を行う問（問丸）が活躍した。米などの現物に代わって銭貨が使われ、中国から輸入された宋銭も利用された。遠隔地間の取引では為替が使われ、金融業者の借上も多く現れた。宿や港は町として発展し、富裕な人々は有徳人と呼ばれた。</p>
+<h3>⑭ 農民の動き</h3><p>荘園領主や地頭の圧迫・非法に対して農民の動きが活発になり、団結して訴訟を起こしたり、集団で逃亡したりする例が増えた。年貢を農民が定額で請け負うことも行われた。</p>
+<h3>⑮ 鎌倉時代の文学</h3><p>西行は歌集『山家集』を残し、鴨長明は『方丈記』を著した。慈円は『愚管抄』で歴史を貫く原理を探った。後鳥羽上皇の命で『新古今和歌集』が編纂され、藤原定家・藤原家隆らが関わった。源実朝は『金槐和歌集』を残した。軍記物語の『平家物語』は琵琶法師によって平曲として語られた。兼好法師の『徒然草』もこの時代の文学として挙げられる。</p>
+<h3>⑯ 学問・歴史書</h3><p>公家の間では朝廷の儀式・先例を研究する有職故実や古典研究が盛んになった。鎌倉幕府の歴史を編年体で記した『吾妻鏡』が編まれ、北条実時とその子孫は金沢文庫を設けた。鎌倉時代末期には宋の朱熹が打ち立てた朱学（朱子学）が伝えられ、大義名分論は討幕運動の理論的なよりどころにもなった。</p>
+<h3>⑰ 鎌倉幕府の滅亡</h3><p>後嵯峨法皇の死後、後深草天皇の流れをくむ持明院統と、亀山天皇の流れをくむ大覚寺統が皇位継承などをめぐって争った。幕府の調停で両統迭立が行われた。大覚寺統から即位した後醍醐天皇は討幕を計画し、1324年に正中の変、1331年に元弘の変が起きた。後醍醐天皇は隠岐に流されたが、護良親王や楠木正成らが反幕府勢力を集めた。足利高氏（のちの尊氏）や新田義貞も幕府に反旗を翻し、1333年に鎌倉幕府は滅亡した。</p>
+<h3>⑱ 建武の新政</h3><p>後醍醐天皇は京都に戻り、1334年に建武の新政を始めた。摂政・関白を置かず、幕府や院政を否定し、土地所有権の確認に天皇の綸旨を必要とするなど、天皇への権限集中を図った。中央には記録所や雑訴決断所を設置し、諸国には国司と守護を置いた。また、東北には陸奥将軍府、関東には鎌倉将軍府を置いた。</p>
+
 <p class="note">※写真に写っている教科書本文・図版の記述を整理しています。</p></section>
 </main><script>
 const qs=[
@@ -54,6 +62,52 @@ const qs=[
 [4,"琉球で各地の首長として勢力を広げた人々は？",["按司","あじ"],"琉球の地域勢力の長。"],
 [4,"琉球で按司が拠点として築いた城は？",["グスク","ぐすく"],"沖縄に見られる城・城塞の呼び名。"],
 [4,"琉球で並び立った3つの勢力をすべて答えよう。",["北山中山南山","北山・中山・南山","北山、中山、南山","山北中山山南","山北・中山・山南"],"北・中・南の3つ。北山は山北、南山は山南とも表記。"]
+
+ [5,"陸上交通の要地に設けられた施設は？",["宿","宿場"],"旅人などが立ち寄る施設。"],
+ [5,"港で商品の委託販売・仲介・運送を行った業者は？",["問","問丸","といまる"],"「問」とも呼ばれる。"],
+ [5,"米などの現物に代わって売買に使われるようになったものは？",["銭貨","貨幣","銭"],"宋から輸入されたものも利用された。"],
+ [5,"鎌倉時代に主に中国から輸入されて利用された銭は？",["宋銭","そうせん"],"中国の王朝名がつく。"],
+ [5,"遠隔地間の取引で、金銭の輸送を手形で代用する仕組みは？",["為替","かわせ"],"現在の送金にも通じる仕組み。"],
+ [5,"鎌倉時代に多く現れた金融業者は？",["借上","かしあげ"],"金銭の貸し付けに関わった。"],
+ [5,"宿や港が町として発展する中で、富裕な人々は何と呼ばれた？",["有徳人","うとくにん"],"「徳」の字を使う呼び名。"],
+ [5,"荘園領主や地頭の圧迫・非法に対して、農民が団結して起こしたものは？",["訴訟","訴え"],"不当な扱いについてまとまって訴えること。"],
+ [5,"農民が集団で行う例も多くなった行動は？",["逃亡","集団逃亡"],"その土地から集団でいなくなること。"],
+ [5,"農民が年貢を一定の額で請け負うことを何という？",["定額","定額で","定額請負"],"毎年一定の額を負担する形。"],
+
+ [6,"武士の家に生まれ、出家して『山家集』を残した歌人は？",["西行","さいぎょう"],"平安時代末期の変動する諸国を遍歴した。"],
+ [6,"鴨長明が著した、無常観を説く作品は？",["方丈記","ほうじょうき"],"作者は鴨長明。"],
+ [6,"承久の乱の直前に『愚管抄』を著し、歴史を貫く原理を探った人物は？",["慈円","じえん"],"僧侶であり、歴史の道理を論じた。"],
+ [6,"後鳥羽上皇の命で編纂された和歌集は？",["新古今和歌集","しんこきんわかしゅう"],"藤原定家・藤原家隆らが編者。"],
+ [6,"『新古今和歌集』の編者として知られる藤原氏の人物を一人答えよう。",["藤原定家","藤原家隆","定家","家隆"],"定家または家隆。"],
+ [6,"将軍源実朝が万葉調の歌をよみ、残した歌集は？",["金槐和歌集","きんかいわかしゅう"],"「金槐」と書く。"],
+ [6,"武士の活躍ぶりを描いた軍記物語の代表作は？",["平家物語","へいけものがたり"],"平氏の興亡を主題とする。"],
+ [6,"『平家物語』を平曲として語った人々は？",["琵琶法師","びわほうし"],"琵琶を演奏しながら物語を語った。"],
+ [6,"鎌倉時代の随筆の名作で、兼好法師が著した作品は？",["徒然草","つれづれぐさ"],"作者は兼好法師。"],
+ [6,"朝廷の儀式や先例を研究する学問は？",["有職故実","ゆうそくこじつ"],"公家の間で盛んになった。"],
+ [6,"鎌倉幕府の歴史を編年体で記した史書は？",["吾妻鏡","あづまかがみ"],"幕府の歴史を記録した書物。"],
+ [6,"北条実時とその子孫が設け、和漢の書物を集めた施設は？",["金沢文庫","かねさわぶんこ","かなざわぶんこ"],"鎌倉の外港として栄えた六浦の金沢に設けられた。"],
+ [6,"宋の朱熹が打ち立てた儒学の一つは？",["朱学","朱子学","しゅしがく"],"大義名分論が討幕運動にも影響した。"],
+
+ [7,"後深草天皇の流れをくむ皇統は？",["持明院統","じみょういんとう"],"亀山天皇の流れをくむ大覚寺統と対立した。"],
+ [7,"亀山天皇の流れをくむ皇統は？",["大覚寺統","だいかくじとう"],"後深草天皇の流れをくむ持明院統と対立した。"],
+ [7,"持明院統と大覚寺統が交代で皇位につく方式は？",["両統迭立","りょうとうてつりつ"],"二つの皇統が交互に皇位についた。"],
+ [7,"討幕を計画し、天皇の権限強化を進めた天皇は？",["後醍醐天皇","ごだいごてんのう"],"大覚寺統から即位した。"],
+ [7,"後醍醐天皇の時代に執権を務めていた人物は？",["北条高時","ほうじょうたかとき"],"内管領の長崎高資が権勢をふるった。"],
+ [7,"北条高時のもとで権勢をふるった内管領は？",["長崎高資","ながさきたかすけ"],"得宗専制政治への御家人の反発が高まった。"],
+ [7,"1324年に起きた、後醍醐天皇の討幕計画が幕府にもれて失敗した事件は？",["正中の変","しょうちゅうのへん"],"元号は正中。"],
+ [7,"1331年に後醍醐天皇が挙兵を企てて失敗した事件は？",["元弘の変","げんこうのへん"],"元号は元弘。"],
+ [7,"元弘の変の後、後醍醐天皇が流された場所は？",["隠岐","おき","隠岐島"],"島根県に属する島。"],
+ [7,"後醍醐天皇の皇子で、討幕運動に加わった人物は？",["護良親王","もりよししんのう","もりながしんのう"],"「もりよし」または「もりなが」と読む。"],
+ [7,"悪党などの反幕府勢力を結集して戦った人物は？",["楠木正成","くすのきまさしげ"],"後醍醐天皇の討幕運動に協力した。"],
+ [7,"幕府軍の指揮官として派遣された後、幕府に背いた有力御家人は？",["足利高氏","足利尊氏","あしかがたかうじ"],"のちの尊氏。"],
+ [7,"関東で挙兵し、鎌倉を攻めた人物は？",["新田義貞","にったよしさだ"],"北条高時以下の北条氏一門を滅ぼした。"],
+ [7,"後醍醐天皇が京都に戻り、1334年に始めた政治は？",["建武の新政","けんむのしんせい"],"年号を建武と改めた。"],
+ [7,"建武の新政で、土地所有権の確認に必要とされた天皇の文書は？",["綸旨","りんじ"],"天皇の命令を伝える文書。"],
+ [7,"建武の新政で中央に設けられた、訴訟などを扱う機関は？",["雑訴決断所","ざっそけつだんしょ"],"幕府の引付を受け継いだ機関。"],
+ [7,"建武の新政で中央に設けられた機関で、名前に「記録」が入るものは？",["記録所","きろくじょ"],"中央の機関の一つ。"],
+ [7,"建武の新政で東北地方に置かれた機関は？",["陸奥将軍府","むつしょうぐんふ"],"東北地方に皇子が派遣された。"],
+ [7,"建武の新政で関東に置かれた機関は？",["鎌倉将軍府","かまくらしょうぐんふ"],"関東地方に皇子が派遣された。"]
+
 ];
 
 let current = 0;
@@ -79,7 +133,7 @@ function renderQuestion(){
  const q=qs[current];
  progress.textContent=`第${current+1}問 / 全${qs.length}問`;
  barFill.style.width=`${(current+1)/qs.length*100}%`;
- stage.innerHTML=`<div class="qcount">第${q[0]}部　${["","モンゴル帝国と2度の襲来","襲来後の政治と幕府の衰退","社会・経済の変化","琉球とアイヌの動き"][q[0]]}</div>
+ stage.innerHTML=`<div class="qcount">第${q[0]}部　${["","モンゴル帝国と2度の襲来","襲来後の政治と幕府の衰退","社会・経済の変化","琉球とアイヌの動き","鎌倉時代の商業と農民","鎌倉時代の文化・学問","鎌倉幕府の滅亡と建武の新政"][q[0]]}</div>
  <div class="questionbox"><span class="num">${current+1}</span>${q[1]}</div>
  <input class="answer" id="currentAnswer" placeholder="答えを入力" autocomplete="off" value="${escapeAttr(userAnswers[current])}" ${checked[current]?"disabled":""}>
  <details class="hint" id="currentHint"><summary>ヒントを見る</summary><p>${q[3]}</p></details>
