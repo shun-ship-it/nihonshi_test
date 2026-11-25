@@ -182,10 +182,18 @@ function hints(open){
 
  
 // Enterキーで答え合わせ
+// Enterキーで答え合わせ・次の問題へ
 stage.addEventListener("keydown", (event) => {
-    if(event.key === "Enter" && event.target.id === "currentAnswer"){
-        event.preventDefault();
+    if(event.key !== "Enter" || event.target.id !== "currentAnswer"){
+        return;
+    }
+
+    event.preventDefault();
+
+    if(!checked[current]){
         checkBtn.click();
+    } else {
+        nextBtn.click();
     }
 });
 
