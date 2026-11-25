@@ -6,7 +6,7 @@
 </style><body><main>
 <header class="panel"><h1>モンゴル襲来から建武の新政まで</h1><p class="muted">教科書のモンゴル襲来から鎌倉幕府の滅亡・建武の新政まで、教科書の内容を確認する入力式クイズです。</p><span class="chip">全70問</span><span class="chip">記述式</span><span class="chip">ヒント・自動採点</span></header>
 <section class="panel"><b>取り組み方</b><p>答えを入力して「答え合わせ」を押そう。できるだけ教科書に出てくる正式な用語で答えてみよう。</p><button class="secondary" onclick="hints(true)">ヒントをすべて開く</button><button class="secondary" onclick="hints(false)">ヒントを閉じる</button></section>
-<section class="panel" id="quizPanel"><div id="progress" class="muted"></div><div id="questionStage"></div><div class="bar"><div id="barFill"></div></div><div id="nav"><button class="secondary" id="prevBtn" type="button">前の問題</button><button class="primary" id="checkBtn" type="button">答え合わせ</button><button class="primary" id="nextBtn" type="button" style="display:none">次の問題へ</button></div><button class="secondary" id="restartBtn" type="button">最初からやり直す</button></section>
+<section class="panel" id="quizPanel"><div id="progress" class="muted"></div><div id="questionStage"></div><div class="bar"><div id="barFill"></div></div><div id="nav"><button class="secondary" id="prevBtn" type="button">前の問題</button><button class="primary" id="checkBtn" type="button">答え合わせ</button><button class="primary" id="nextBtn" type="button" style="display:none">次の問題へ</button></div><button class="primary" id="resultBtn" type="button">結果を見る</button><button class="secondary" id="restartBtn" type="button">最初からやり直す</button></section>
 <div id="result" class="result"></div>
 <section class="panel summary"><h2>詳しい要点まとめ</h2>
 <h3>① モンゴル帝国の成立</h3><p>13世紀初め、チンギス＝ハンがモンゴル諸部族を統一。中央アジアから南ロシアにまで遠征し、後継者たちもヨーロッパ遠征を行って広大なユーラシア帝国を築いた。</p>
@@ -121,6 +121,16 @@ const checkBtn = document.getElementById("checkBtn");
 const nextBtn = document.getElementById("nextBtn");
 const result = document.getElementById("result");
 
+ document.getElementById("resultBtn").addEventListener("click", () => {
+    const input = document.getElementById("currentAnswer");
+
+    if (input && !checked[current]) {
+        userAnswers[current] = input.value.trim();
+    }
+
+    showResult();
+});
+
 function norm(s){return s.toLowerCase().replace(/[ 　\\t。、・＝=「」『』（）]/g,"").replace(/年$/,"").replace(/約/g,"")}
 function isCorrect(v,answers){
  let x=norm(v);
@@ -159,17 +169,54 @@ document.getElementById("restartBtn").addEventListener("click",()=>{
  current=0;userAnswers.fill("");checked.fill(false);result.className="result";result.innerHTML="";renderQuestion();window.scrollTo({top:0,behavior:"smooth"});
 });
 function showResult(){
- let score=0;
- qs.forEach((q,i)=>{if(isCorrect(userAnswers[i],q[2]))score++});
- result.className="result show";
- result.innerHTML=`<div class="score">結果：${score} / ${qs.length} 点（${Math.round(score/qs.length*100)}%）</div>
- <p>${score===qs.length?"全問正解！すばらしい！":score>=24?"とてもよくできました！":score>=18?"いい調子！間違えた問題を復習しよう。":"要点まとめを読んで、もう一度挑戦しよう。"}</p>
- <h3>まちがえた問題・答え</h3>
- ${qs.map((q,i)=>isCorrect(userAnswers[i],q[2])?"":`<p><b>${i+1}. ${q[1]}</b><br>あなたの答え：${userAnswers[i]||"未入力"}<br>正答例：<b>${q[2][0]}</b></p>`).join("")||"<p>全問正解！</p>"}
- <button class="primary" type="button" onclick="retryWrong()">間違えた問題をもう一度</button>
- <button class="secondary" type="button" onclick="restartQuiz()">最初から挑戦</button>`;
- document.getElementById("quizPanel").style.display="none";
- result.scrollIntoView({behavior:"smooth",block:"center"});
+    let score = 0;
+    let answered = 0;
+
+    qs.forEach((q, i) => {
+        if (userAnswers[i].trim() !== "") answered++;
+        if (isCorrect(userAnswers[i], q[2])) score++;
+    });
+
+    const percentage = Math.round(score / qs.length * 100);
+    const wrong = qs.length - score;
+
+    result.className = "result show";
+
+    result.innerHTML = `
+        <div class="score">テスト結果</div>
+
+        <p style="font-size:2.5rem;font-weight:900;color:#923b34">
+            ${percentage}%
+        </p>
+
+        <h3>正答率</h3>
+        <div class="bar">
+            <div style="width:${percentage}%"></div>
+        </div>
+
+        <p>全問題数：${qs.length}問</p>
+        <p>回答済み：${answered}問</p>
+        <p style="color:#176b45">正解：${score}問</p>
+        <p style="color:#a83232">不正解・未回答：${wrong}問</p>
+
+        <h3>間違えた問題・正答例</h3>
+
+        ${qs.map((q,i) =>
+            isCorrect(userAnswers[i],q[2]) ? "" :
+            `<p>
+                <b>${i+1}. ${q[1]}</b><br>
+                あなたの答え：${userAnswers[i] || "未回答"}<br>
+                正答例：<b>${q[2][0]}</b>
+            </p>`
+        ).join("")}
+
+        <button class="primary" onclick="restartQuiz()">
+            もう一度挑戦する
+        </button>
+    `;
+
+    document.getElementById("quizPanel").style.display = "none";
+    result.scrollIntoView({behavior:"smooth"});
 }
 function retryWrong(){
  const wrong=qs.map((q,i)=>({q,i})).filter(x=>!isCorrect(userAnswers[x.i],x.q[2])).map(x=>x.i);
