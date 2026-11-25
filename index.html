@@ -180,6 +180,15 @@ function hints(open){
     }
 }
 
+ 
+// Enterキーで答え合わせ
+stage.addEventListener("keydown", (event) => {
+    if(event.key === "Enter" && event.target.id === "currentAnswer"){
+        event.preventDefault();
+        checkBtn.click();
+    }
+});
+
 checkBtn.addEventListener("click",()=>{
  const input=document.getElementById("currentAnswer");
  userAnswers[current]=input.value.trim();
