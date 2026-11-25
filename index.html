@@ -108,6 +108,25 @@ const qs=[
 
 ];
 
+ 
+// 問題をランダムな順番にシャッフル
+function shuffle(array){
+    const result = [...array];
+
+    for(let i = result.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        [result[i], result[j]] = [result[j], result[i]];
+    }
+
+    return result;
+}
+
+// シャッフルした問題を使用
+const originalQs = [...qs];
+const shuffledQs = shuffle(qs);
+
+qs.splice(0, qs.length, ...shuffledQs);
+
 let current = 0;
 const userAnswers = Array(qs.length).fill("");
 const checked = Array(qs.length).fill(false);
