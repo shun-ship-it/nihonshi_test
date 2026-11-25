@@ -152,6 +152,15 @@ function renderQuestion(){
  nextBtn.textContent=current===qs.length-1?"結果を見る":"次の問題へ";
 }
 function escapeAttr(s){return String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+ 
+// ヒントをすべて開く・閉じる
+function hints(open){
+    const hint = document.getElementById("currentHint");
+    if(hint){
+        hint.open = open;
+    }
+}
+
 checkBtn.addEventListener("click",()=>{
  const input=document.getElementById("currentAnswer");
  userAnswers[current]=input.value.trim();
